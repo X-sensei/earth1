@@ -41,19 +41,14 @@ Function({
 			commandslist[command.type].push((match.length >= 3 ? (HANDLER + mmatch) : command.pattern).trim())
 		}
 	})
-	let msg = `╭━━━〔 ${BOT_INFO.split(";")[0]} ⁩〕━━━┈⊷
-┃✵╭──────────────
-┃✵│ Owner : ${BOT_INFO.split(";")[1]}
-┃✵│ User : ${m.pushName.replace( /[\r\n]+/gm, "" )}
-┃✵│ Plugins : ${commands.length}
-┃✵│ Runtime : ${runtime(process.uptime())}
-┃✵│ Mode : ${MODE}
-┃✵│ Platform : ${os.platform()}
-┃✵│ Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
-┃✵│ Version : ${VERSION}
-┃✵╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷
-`
+	let msg = `🌏Name : ${BOT_INFO.split(";")[0]}
+🎗️Owner : ${BOT_INFO.split(";")[1]}
+👤User : ${m.pushName.replace( /[\r\n]+/gm, "" )}
+⚜️Plugins : ${commands.length}
+⚡Runtime : ${runtime(process.uptime())}
+🔰Mode : ${MODE}
+💻Platform : ${os.platform()}
+💾Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}`
 	for (const command in commandslist) {
 		msg += `╭─────────────┈⊷
 `
